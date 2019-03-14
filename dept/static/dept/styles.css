@@ -1,0 +1,74 @@
+.slowly-fade{
+    text-align: center;
+    opacity: 0;
+}
+
+.imgx{
+    display: none;
+}
+.img-visible{
+    display: block;
+}
+
+.left-arrowx{
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    color: aliceblue;
+    font-size: 30px;
+    cursor: pointer;
+}
+.left-arrowx:hover{
+    color: rgba(120,120,120,0.5);
+}
+.right-arrowx{
+    position: absolute;
+    right: 5%;
+    top: 35%;
+    color: aliceblue;
+    font-size: 30px;
+    cursor: pointer;
+}
+.right-arrowx:hover{
+    color: rgba(120,120,120,0.5);
+}
+
+.thumb-text{
+    //display: block;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.open > .dropdown-menu {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);  
+  opacity:1;
+}
+  
+.dropdown-menu {
+  opacity:.3;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;  
+  animation-fill-mode: forwards; 
+  -webkit-transform: scale(1, 0);
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+.card:hover{
+    background-color:#f2f2f2;
+}

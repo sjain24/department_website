@@ -1,0 +1,183 @@
+<DOCTYPE html>
+
+<html>
+<head>
+    {% load static %}
+    <title>{% block title %}EEE/ECE department{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'dept/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dept/styles.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static 'dept/sliderControl.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'dept/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dept/mdb.min.css' %}">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+￼
+        #cards:hover{
+            box-shadow: 5px 10px rgba(120,120,120,0.5);
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function(){
+        $(".dropdown").hover(            
+                function() {
+                    $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+                    $(this).toggleClass('open');
+                    $('b', this).toggleClass("caret caret-up");                
+                },
+                function() {
+                    $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+                    $(this).toggleClass('open');
+                    $('b', this).toggleClass("caret caret-up");                
+                });
+        });
+    </script>
+</head>
+
+<body>
+    {% block home_menu %}
+    <div class='container'>
+        <h1 class='slowly-fade' style="font-family: 'Roboto Condensed', sans-serif;">
+            <img src="{% static 'dept/images/logo.png' %}" height='80px' width='80px' />
+            <div style="display: inline;">Department of Electronics and Electrical Engineering</div>
+        </h1>
+        <script>
+            $('document').ready(function(){
+                $('.slowly-fade').animate({
+                    opacity: '1.0',
+                    fontSize: '50px',
+                }, 2000);
+            });
+        </script>   
+    </div>
+    <div class='container-fluid' style='background-color: black; position:relative;'>
+        
+        <span class='left-arrowx'  onclick='plusImg(-1)'>  ❮  </span>
+
+        <span class='right-arrowx' onclick='plusImg(1)' >  ❯  </span>
+        
+        <img src="{% static 'dept/images/core-2-iitg.jpg' %}" width='100%' height='400px' class='imgx' />
+        <img src="{% static 'dept/images/viewiitg.jpg' %}" width='100%' height='400px' class='imgx' />
+        <img src="{% static 'dept/images/viewiitg2.jpg' %}" width='100%' height='400px' class='imgx' />
+        
+        <script>
+            var idx = 0;
+            //setInterval(plusImg(1), 2000);
+            showImg(idx);
+            function showImg(n){
+                var i;
+                var slides = document.getElementsByClassName('imgx');
+                for(i=0; i<slides.length; i++){
+                    slides[i].style.display = 'none';
+                }
+                slides[n].style.display = 'block';
+            }
+            function plusImg(n){
+                idx += n;
+                var slides = document.getElementsByClassName('imgx');
+                var l = slides.length;
+                if(idx > (l-1)){
+                    idx = 0;
+                }
+                if(idx<0){
+                    idx = l-1;
+                }
+                showImg(idx);
+            }
+            setInterval(function(){plusImg(1);}, 5000);
+            /*function ale(){
+                alert('hey!!');
+            }
+            ale();*/
+            //setInterval(ale, 2000);
+        </script>
+    </div>
+    <br>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">IITG</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Research <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                    <li role="presentation"><a href="#" role="menuitem">Groups</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Projects</a></li>
+                </ul>
+            </li>
+             <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Academics <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                    <li role="presentation"><a href="#" role="menuitem">Ph.D</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Dual(MS+Ph.D</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">B.Tech</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">M.Tech</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Electives</a></li>
+                </ul>
+            </li>  
+              <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">People <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                    <li role="presentation"><a href="#" role="menuitem">Faculty</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Staff</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">IPD Fellow</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Students</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Committees</a></li>
+                </ul>
+            </li>
+               <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Other links <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                    <li role="presentation"><a href="#" role="menuitem">Past Events</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Awards</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Visitors</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Cepstrum</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">IEEE-SB</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">RS Forum</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Intranet (EEE)</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Publications</a></li>
+            <li><a href="#" style=";">Facilities</a></li>
+            <li><a href="#" style=";">Announcements</a></li>
+            <li><a href="#" style=";">Archieve</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+    {% endblock %}
+<!-- Footer -->
+    
+    {% block body %}
+    {% endblock %}
+    
+    
+    {% block footer %}
+<footer class="page-footer font-large blue" >
+
+  <!-- Copyright --><h3>
+  <div class="footer-copyright text-center py-3">
+    <span style='text-align: center;font-family:sans-serif; color:white;'><h4>© 2019: EEE Department, Indian Institute of Technology Guwahati.</h4></span>
+  </div></h3>
+  <!-- Copyright -->
+
+</footer>
+    {% endblock %}
+<!-- Footer -->
+</body>
+
+</html>

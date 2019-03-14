@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+   
+{% block body %}
+<script>
+<!--$(document).ready(function(){-->
+  <!--$(".card").mouseover(function(){-->
+    <!--$(".card").css("background-color", "yellow");-->
+  <!--});-->
+  <!--$(".card").mouseout(function(){-->
+    <!--$(".card").css("background-color", "white");-->
+  <!--});-->
+<!--});-->
+</script>
+    <br>
+    <h1 style='text-align: center;font-family:sans-serif; color:black;'>Professors</h1>
+    <br>
+
+
+    <div class="container">
+
+        <div class="row">
+            {% for p in prof %}
+                <div class="card col-lg-6 col-md-6 col-sm-6 col-12" style="border: 1px solid transparent; padding: 10px; border-radius: 10px; height: 350px;">
+
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" ><br>
+                        <img src='{{p.img.url}}' class='card-img img-thumbnail'  height='250px' style="border-radius: 50%;" alt="Photo not available">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="card-block" >
+                            {% if p.middle_name != "" %}
+                            <h3 class="card-title" style="color:blue; font-family: 'Domine', serif;">{{p.first_name}} {{p.middle_name}} {{p.last_name}}</h3>
+                            {% else  %}
+                            <h3 class="card-title" style="color:blue; font-family: 'Domine', serif;">{{p.first_name}} {{p.last_name}}</h3>
+                            {% endif %}
+                            <h4 class="card-text" style="">{{p.designation}}</h4>
+                            <h4 class="card-text" style=""><span class="glyphicon glyphicon-phone"></span>{{p.phone_no}}</h4>
+                            <h4 class="card-text" style="">
+                                <span class="glyphicon glyphicon-envelope"> {{p.email_id}}</span>
+                            </h4>
+                            <h4 class="card-text" style="">
+                                <p>{{p.research_int1}}</p><p>{{p.research_int2}}</p><p>{{p.research_int3}}</p><p>{{p.research_int4}}</p>
+                            </h4>
+
+
+                            <!--<a href="#" class="btn btn-primary" style="font-size: 15px;">Read More</a>-->
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+{% endblock %}
